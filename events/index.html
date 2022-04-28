@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="../jquery.js"></script>
+
+    <style>
+        body{
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: lightgrey;
+            line-height: 1.5em;
+        }
+
+        header{
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+
+        #container{
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>jQuery crash course</h1>
+    </header>
+    <section id="container">
+       <h3>Mouse Events</h3>
+       <button id="btn1">hide</button>
+       <button id="btn2">show</button>
+         <button id="btn3">toggle</button>
+         <button id="btn4">double click</button>
+         <button id="btn5">hover</button>
+         <button id="btn6">mouse enter/leave</button>
+            <button id="btn7">mouse move</button>
+            <button id="btn8">mouse up</button>
+            <button id="btn9">mouse down</button>
+            <button id="btn10">mouse wheel</button>
+            <button id="btn11">Parameter e</button>
+
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, optio corrupti a architecto perspiciatis, nobis temporibus est animi facere unde recusandae, expedita odio? Sit, esse?</p>
+    </section>
+    <h3>Mouse Coords:<h3 id="coords"> </h3> </h3>
+    <hr>
+   <form id="form">
+         <label for="">Name</label><br>
+            <input type="text" id="name">
+            <br>
+            <label for="">Email</label><br>
+            <input type="email" id="email">
+            <br>
+
+            <label for="">Gender</label><br>
+           <select name="gender" id="gender">
+               <option value="male">Male</option>
+               <option value="female">Female</option>
+           </select>
+            <input type="submit" value="Submit">
+   </form>
+    <script>
+      $('#btn1').click(function(){
+        $('p').hide();
+      });
+
+        $('#btn2').on('click',function(){
+            $('p').show();
+        });
+
+        $('#btn3').on('dblclick',function(){
+            //toggle means back and forth
+            //if it is hidden, show it
+            //if it is shown, hide it
+            $('p').toggle();
+        });
+        $('#btn4').on('dblclick',function(){
+            //dblclick means double click
+            $('p').toggle();
+        });
+        $('#btn5').hover(function(){
+            //hover is not a real event but its a shor form of mouse enter and leaves
+            $('p').toggle();
+        });
+
+        $('#btn6').on('mouseenter',function(){
+           //works like hover
+            $('p').toggle();
+        });
+
+        $('#btn6').on('mouseleave',function(){
+            //works like hover
+            $('p').toggle();
+        });
+
+        $('#btn7').on('mousemove',function(){
+            //works like hover
+            $('p').toggle();
+        });
+
+        $('#btn8').on('mouseup',function(){
+            $('p').toggle();
+        });
+
+        $('#btn8').on('mousedown',function(){
+            $('p').toggle();
+        });
+
+        // $('#btn8').wheel(function(){
+            //this one doesn;t work
+        //     $('p').toggle();
+        // });
+
+        $('#btn11').on('click',function(e){
+            // alert9(e.currentTarget.id);
+            // alert(e.type);
+            alert(e.currentTarget.innerHTML)
+        });
+
+        //to get the coordinates of the mouse
+        $(document).on('mousemove',function(e){
+            // alert(e.pageX);
+            // alert(e.pageY);
+            $('#coords').html(' Y: '+e.clientY+' X: '+e.clientX);
+        });
+
+
+        // form
+        $('input').focus(function(){
+            $(this).css('background','red');
+        });
+
+        $('input').blur(function(){
+            $(this).css('background','white');
+        });
+
+        $('input').keyup(function(e){
+            //keyup means everytime some one type
+            // alert('key up');
+
+            //this will return the value in the textbox
+            console.log(e.target.value)
+        })
+
+        $('select#gender').change(function(e){
+            alert(e.target.value)
+        })
+
+        $('#form').submit(function(e){
+            e.preventDefault();
+            console.log('submitted')
+
+            // get the name from the input when submitted
+            var name = $('#name').val();
+            alert(name);
+        })
+    </script>
+
+</body>
+</html>

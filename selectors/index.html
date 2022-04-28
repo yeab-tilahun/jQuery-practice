@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="../jquery.js"></script>
+
+    <style>
+        body{
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: lightgrey;
+            line-height: 1.5em;
+        }
+
+        header{
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+
+        #container{
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>jQuery crash course</h1>
+    </header>
+    <section id="container">
+        <h1 id="heading1">Heading one</h1>
+        <p id="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Tenetur molestias <span> enim error autem dignissimos temporibus
+             sed</span> ducimus fugit, nemo sequi.</p>
+
+        <h1 class="heading2">Heading one</h1>
+        <p class="para2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Tenetur molestias <span> enim error autem dignissimos temporibus
+             sed</span> ducimus fugit, nemo sequi.</p>
+    </section>
+
+        <ul id="list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+        </ul>
+
+        <input type="button" value="Button 1">
+        <input type="submit" value="Submit">
+        <input type="text" name="" id="">
+
+        <a href="hhtp://google.com">Google</a>
+        <a href="hhtp://yahoo.com">Yahoo</a>
+
+    <script>
+        // $('h1').hide();
+        // $('h1#heading1').hide();
+        // $('.heading2').hide();
+        // $('.para2').hide();
+        // $('p span').css('color', 'red');
+        // $('p span').css('font-size', '20px');
+        // $('p span').css('font-weight', 'bold');
+
+        // $('p span').hide();
+        // $('p span').show();
+
+        // $('ul#list li:first').css('color', 'red');
+        // $('ul#list li:last').css('color', 'green');
+        // $('ul#list li:nth-child(2)').css('color', 'blue');
+        // $('ul#list li:nth-child(3)').css('color', 'yellow');
+        // $('ul#list li:nth-child(4)').css('color', 'orange');
+
+        // $(':button').hide();
+        // $(':submit').hide();
+        // $(':text').hide();
+
+        // $('a').hide();
+        // $('a[href]').css('color', 'red');
+        // $('a[href="hhtp://yahoo.com"]').css('color', 'green');
+        // $('a[href^="hhtp://google.com"]').css('color', 'blue');
+        // $('a[href$="com"]').css('color', 'yellow');
+    </script>
+
+</body>
+</html>
